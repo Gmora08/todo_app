@@ -15,13 +15,10 @@ config :todo_app, TodoAppWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "2uf/uUp1NaIkgJARJZo0D01wK/m6DudzlyTpAY4EwR/7hy8wOXeYAoW+mAi/Auor",
   render_errors: [view: TodoAppWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: TodoApp.PubSub, adapter: Phoenix.PubSub.PG2]
-
-
-config :todo_app, MyAppWeb.Endpoint,
-   live_view: [
-     signing_salt: "0jbZMyJ7K04YJOcoQjSgAWvb4llv5TnkHuGtckemjV0jfrKIQoXH0+p84M32yFY3"
-   ]
+  pubsub: [name: TodoApp.PubSub, adapter: Phoenix.PubSub.PG2],
+  live_view: [
+    signing_salt: "QGpICM2vT1ZF9T4vu3MDukKMlOxC8H/6"
+  ]
 
 # Configures Elixir's Logger
 config :logger, :console,
