@@ -17,6 +17,12 @@ config :todo_app, TodoAppWeb.Endpoint,
   render_errors: [view: TodoAppWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: TodoApp.PubSub, adapter: Phoenix.PubSub.PG2]
 
+
+config :todo_app, MyAppWeb.Endpoint,
+   live_view: [
+     signing_salt: "0jbZMyJ7K04YJOcoQjSgAWvb4llv5TnkHuGtckemjV0jfrKIQoXH0+p84M32yFY3"
+   ]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
