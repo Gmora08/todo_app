@@ -18,7 +18,9 @@ defmodule TodoApp.Todos do
 
   """
   def list_todos do
-    Repo.all(Todo)
+    Todo
+    |> where([t], t.done == false)
+    |> Repo.all()
   end
 
   @doc """

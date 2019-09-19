@@ -1,10 +1,17 @@
-<%= for todo <- @todos do %>
-<div><%= todo.title %></div>
-<% end %>
-
 <h3> Add a todo </h3>
 
 <form action="#" phx-submit="add">
   <%= text_input :todo, :title, placeholder: "Add a new todo" %>
   <%= submit "Add", phx_disable_with: "Adding..." %>
 </form>
+
+<%= for todo <- @todos do %>
+<div>
+  <form action="#" id=todo.id phx-submit="mark_as_done">
+    <%= hidden_input :id, :id, value: todo.id %>
+    <%= submit "Done", phx_disable_with: "Updating...", class: "btn btn-info" %>
+
+    <span class="font-weight-bold"><%= todo.title %></span>
+  </form>
+</div>
+<% end %>
